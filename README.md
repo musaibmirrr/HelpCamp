@@ -5,3 +5,17 @@ HelpCamp is a full-stack web application that enables users to create, view, and
  User Authentication and Authorization
   - Registration and Login: Secure account creation, login, and logout features using Passport.js with the local strategy. 
   - Protected Routes and Role-Based Access: Authorization restricts actions like editing and deleting campgrounds or reviews to the respective creators.
+    
+ Campground Creation and Management
+  - Users can create new campground entries with details like name, image, location, and description.
+  - Cloud-based image storage with Cloudinary (integrated via Multer) allows users to upload campground images.
+  - Campgrounds feature interactive maps integrated through MapTiler Cloud to help users locate them and also displays map clusters indicating the number of campgrounds in a particular location.
+
+ Review System with Fake Review Detection
+  - Logged-in users can leave reviews that include text and star ratings.
+  - A fake review detection feature, powered by the Natural language processing library Natural, flags overly positive or negative reviews. The sentiment is rated on a scale from -5 to 5, where reviews scoring >3 are flagged as very
+    positive and those scoring <-3 as very negative. In natural, the sentiment score is specifically polarity it measures the positivity or negativity of the text. It’s derived from an underlying lexicon (like the AFINN lexicon), which
+    assigns sentiment values to words based on their positive or negative emotional weight. 
+
+ Responsive Design
+  - Built with Bootstrap to ensure a mobile-friendly design, making it accessible across devices.
