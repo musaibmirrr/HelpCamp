@@ -22,15 +22,24 @@ HelpCamp is a full-stack web application that enables users to create, view, and
 
 # Technologies Used
  Backend:
-  - Node.js and Express for server-side logic and routing.
-  - MongoDB as the database, managed with Mongoose.
-  - 
+  - Node.js and Express.js for server-side logic and routing.
+  - MongoDB as the database, managed with Mongoose ODM.
+ 
  Frontend:
   - EJS templating for dynamic HTML.
   - Bootstrap for responsive, consistent styling.
-    
+  -     
 Additional Integrations:
   - Passport.js (local strategy) for secure user authentication.
   - Cloudinary for cloud storage of images, integrated with Multer for handling file uploads.
   - MapTiler Cloud for interactive map integration.
   - Natural library for fake review detection based on sentiment.
+
+# Installation
+ Clone this repo
+ Make account on cloudinary, maptiler and add you api keys, cloud name and secret in the .env file.
+ Navigate to the Project Directory: Open a terminal and go to the directory where your package.json file is located:
+ cd /path/to/your/project
+ Run npm install: This command will read the package.json file and install all dependencies listed under "dependencies".
+ npm install
+ Run the server using nodemon app.js (install nodemon globally first) on localhost.
