@@ -28,7 +28,7 @@ HelpCamp is a full-stack web application that enables users to create, view, and
  Frontend:
   - EJS templating for dynamic HTML.
   - Bootstrap for responsive, consistent styling.
-  -     
+  
 Additional Integrations:
   - Passport.js (local strategy) for secure user authentication.
   - Cloudinary for cloud storage of images, integrated with Multer for handling file uploads.
