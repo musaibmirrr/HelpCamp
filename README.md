@@ -19,3 +19,18 @@ HelpCamp is a full-stack web application that enables users to create, view, and
 
  Responsive Design
   - Built with Bootstrap to ensure a mobile-friendly design, making it accessible across devices.
+
+# Technologies Used
+ Backend:
+  - Node.js and Express for server-side logic and routing.
+  - MongoDB as the database, managed with Mongoose.
+  - 
+ Frontend:
+  - EJS templating for dynamic HTML.
+  - Bootstrap for responsive, consistent styling.
+    
+Additional Integrations:
+  - Passport.js (local strategy) for secure user authentication.
+  - Cloudinary for cloud storage of images, integrated with Multer for handling file uploads.
+  - MapTiler Cloud for interactive map integration.
+  - Natural library for fake review detection based on sentiment.
