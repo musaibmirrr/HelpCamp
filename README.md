@@ -17,6 +17,10 @@ HelpCamp is a full-stack web application that enables users to create, view, and
     positive and those scoring <-3 as very negative. In natural, the sentiment score is specifically polarity it measures the positivity or negativity of the text. It’s derived from an underlying lexicon (like the AFINN lexicon), which
     assigns sentiment values to words based on their positive or negative emotional weight. 
 
+ Geocoding using maptiler
+  - Provides maps with many navigation and control    
+    features to locate the campground. When a user          enters a location while creating a campground it is geocoded and the respective location is displayed in the map
+
  Responsive Design
   - Built with Bootstrap to ensure a mobile-friendly design, making it accessible across devices.
 
