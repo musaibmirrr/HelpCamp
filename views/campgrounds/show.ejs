@@ -27,6 +27,10 @@
                     <h5 class="card-title">
                         <%= campground.title %>
                     </h5>
+                    <span class="text-muted px-2">Average Rating <%= averageRating %></span>
+                    <p class="starability-result mt-1" data-rating="<%= averageRating %>">
+                        Rated: <%= averageRating %> stars
+                    </p>
                     <p class="card-text">
                         <%= campground.description %>
                     </p>
