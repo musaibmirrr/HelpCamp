@@ -20,7 +20,6 @@ module.exports.createCampground = async (req, res, next) => {
     const camp = new Campground(req.body.campground)
     // we geo code the data and save geo json to db
     camp.geometry = geoData.features[0].geometry;
-    console.log(camp.geometry)
     camp.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     camp.author = req.user._id;
     await camp.save();
@@ -67,7 +66,6 @@ module.exports.renderEditForm = async (req, res, next) => {
 
 module.exports.updateCampground = async (req, res, next) => {
     const { id } = req.params;
-    console.log(req.body)
     const camp = await Campground.findByIdAndUpdate(id, { ...req.body.campground }, { new: true, runValidators: true });
     const geoData = await maptilerClient.geocoding.forward(req.body.campground.location, { limit: 1 });
     camp.geometry = geoData.features[0].geometry;
