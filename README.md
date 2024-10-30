@@ -47,4 +47,5 @@ Additional Integrations:
   - Navigate to the Project Directory: Open a terminal and go to the directory where your package.json file is located:
   - cd /path/to/your/project
   - Run npm install: This command will read the package.json file and install all dependencies listed under "dependencies".
+  - Before running the server, make sure to run node seeds/index.js for seeding the campgrounds.
   - Run the server using nodemon app.js (install nodemon : npm i nodemon -g) on localhost.
