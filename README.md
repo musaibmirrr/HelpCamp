@@ -41,10 +41,10 @@ Additional Integrations:
   - Helmet for handling common web security issue like XSS, mongo injection etc.
 
 # Installation
- Clone this repo
- Make account on cloudinary, maptiler and add you api keys, cloud name and secret in the .env file.
- Navigate to the Project Directory: Open a terminal and go to the directory where your package.json file is located:
- cd /path/to/your/project
- Run npm install: This command will read the package.json file and install all dependencies listed under "dependencies".
- npm install
- Run the server using nodemon app.js (install nodemon globally first) on localhost.
+  - Clone this repo
+  - Install mongodb
+  - Make account on cloudinary, maptiler and add you api keys, cloud name and secret in the .env file.
+  - Navigate to the Project Directory: Open a terminal and go to the directory where your package.json file is located:
+  - cd /path/to/your/project
+  - Run npm install: This command will read the package.json file and install all dependencies listed under "dependencies".
+  - Run the server using nodemon app.js (install nodemon : npm i nodemon -g) on localhost.
