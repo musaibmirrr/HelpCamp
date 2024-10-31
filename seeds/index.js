@@ -5,7 +5,10 @@ const Campground = require('../models/campground')
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
 
-mongoose.connect('mongodb://127.0.0.1:27017/help-camp')
+// mongoose.connect('mongodb://127.0.0.1:27017/help-camp')
+
+const dbUrl = process.env.DB_URL
+mongoose.connect(dbUrl)
 
 const db = mongoose.connection;
 
@@ -22,7 +25,7 @@ const nameMake = (array) => array[Math.floor(Math.random() * array.length)]
 
 const seedDb = async () => {
     await Campground.deleteMany({})
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         const random1000 = Math.floor(Math.random() * 1000);
         const price = Math.floor(Math.random() * 30) + 10;
         const camp = new Campground({
