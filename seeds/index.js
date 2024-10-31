@@ -1,18 +1,11 @@
 // our seed setup
-if (process.env.NODE_ENV !== "production") {
-    require('dotenv').config()
-}
 const mongoose = require('mongoose');
 // im in seed directory so i need to back out once
 const Campground = require('../models/campground')
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
 
-// mongoose.connect('mongodb://127.0.0.1:27017/help-camp')
-
-const dbUrl = process.env.DB_URL
-mongoose.connect(dbUrl)
-
+mongoose.connect('mongodb://127.0.0.1:27017/help-camp')
 
 const db = mongoose.connection;
 
