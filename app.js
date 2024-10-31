@@ -37,10 +37,10 @@ const usersRouter = require('./routes/users');
 
 const mongoSanitize = require('express-mongo-sanitize')
 
-const dbUrl = 'mongodb://127.0.0.1:27017/help-camp';
-mongoose.connect(dbUrl);
-// const dbUrl = process.env.DB_URL
-// mongoose.connect(dbUrl)
+// const dbUrl = 'mongodb://127.0.0.1:27017/help-camp';
+// mongoose.connect(dbUrl);
+const dbUrl = process.env.DB_URL
+mongoose.connect(dbUrl)
 
 // connection object on mongoose and db is just a refernce variable
 // db.on is an event handle for error event and c.l.bind binds console object to connection error string
