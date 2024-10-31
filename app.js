@@ -3,7 +3,7 @@
 // Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 // we only wanna get the info out of .env as long as we are in development mode
 // in our app we will now has access to .env variables
-if(process.env.NODE_ENV !== "production"){
+if (process.env.NODE_ENV !== "production") {
     require('dotenv').config()
 }
 
@@ -16,6 +16,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const helmet = require('helmet');
 
@@ -36,7 +37,8 @@ const usersRouter = require('./routes/users');
 
 const mongoSanitize = require('express-mongo-sanitize')
 
-mongoose.connect('mongodb://127.0.0.1:27017/help-camp');
+const dbUrl = 'mongodb://127.0.0.1:27017/help-camp';
+mongoose.connect(dbUrl);
 // const dbUrl = process.env.DB_URL
 // mongoose.connect(dbUrl)
 
@@ -61,9 +63,19 @@ app.use(methodOverride('_method'));
 
 app.use(mongoSanitize())
 
+// adding in mongo store for sessions
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret: 'thisshouldbeabettersecret!'
+    }
+});
+
 // adding in session so that we could setup auth and flashes.
 const sessionConfig = {
-    name : 'helpToken',
+    store,
+    name: 'helpToken',
     // The HttpOnly flag (optional) is included in the HTTP response header, the cookie cannot be accessed through client side script (again if the browser supports this flag). As a result, even if a cross-site scripting (XSS) flaw exists, and a user accidentally accesses a link that exploits this flaw, the browser (primarily Internet Explorer) will not reveal the cookie to a third party.
     secret: 'thisshouldbeabettersecret!',
     resave: false,
