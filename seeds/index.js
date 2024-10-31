@@ -1,4 +1,7 @@
 // our seed setup
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config()
+}
 const mongoose = require('mongoose');
 // im in seed directory so i need to back out once
 const Campground = require('../models/campground')
@@ -9,6 +12,7 @@ const { places, descriptors } = require('./seedHelpers');
 
 const dbUrl = process.env.DB_URL
 mongoose.connect(dbUrl)
+
 
 const db = mongoose.connection;
 
