@@ -49,3 +49,6 @@ Additional Integrations:
   - Run npm install: This command will read the package.json file and install all dependencies listed under "dependencies".
   - Before running the server, make sure to run node seeds/index.js for seeding the campgrounds.
   - Run the server using nodemon app.js (install nodemon : npm i nodemon -g) on localhost.
+
+# Deployment
+  - HelpCamp, a full-stack web application, is now live and accessible via Render's cloud platform. Render handles both the backend and frontend deployments, ensuring a smooth user experience with features like automatic scaling, HTTPS,      and continuous deployment from your GitHub repository. This setup provides a stable environment for users to interact with your app without the need for managing server infrastructure manually, making your deployment both robust and      easy to maintain.
