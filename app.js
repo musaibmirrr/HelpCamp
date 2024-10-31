@@ -83,7 +83,7 @@ const sessionConfig = {
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
-        secure : true,// cookies can only be accessed over https
+        // secure : true, cookies can only be accessed over https
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7 //converting week into milliseconds because date.now() is in milliseconds
         ,
         maxAge: 1000 * 60 * 60 * 24 * 7
