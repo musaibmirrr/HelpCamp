@@ -37,9 +37,7 @@ const usersRouter = require("./routes/users");
 
 const mongoSanitize = require("express-mongo-sanitize");
 
-// const dbUrl = 'mongodb://127.0.0.1:27017/help-camp';
-// mongoose.connect(dbUrl);
-const dbUrl = process.env.DB_URL;
+const dbUrl = 'mongodb://127.0.0.1:27017/help-camp';
 mongoose.connect(dbUrl);
 
 // connection object on mongoose and db is just a refernce variable
